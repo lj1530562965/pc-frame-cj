@@ -1,0 +1,30 @@
+.iconfont{
+     color: #23b7e5;
+ }
+.button-box button{
+    background-color: #23b7e5;
+    border: 1px solid #23b7e5;
+}
+.navbar-toggler{
+    color: #23b7e5;
+}
+.input-box input:hover,.input-box input:focus {
+    border-color: #23b7e5!important;
+}
+.input-box input:focus {
+    border-color: #23b7e5!important;
+    box-shadow: 0 0 0 2px rgba(35, 183, 229, 0.2)!important;
+}
+.text-primary {
+    color: #23b7e5!important;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+    background-color: #23b7e5!important;
+    border-color: #23b7e5!important;
+}
+.pagination>li>a, .pagination>li>span {
+    color: #23b7e5!important;
+}
+.sidebar .nav div > .nav-dropdown.open {
+    border-left: 4px solid #23b7e5!important;
+}

@@ -1,0 +1,126 @@
+{
+    "api": {
+        "login": {
+            "fn": "login",
+            "url": "/pallas/sys.do",
+            "p": {
+                "uname": "login_uname",
+                "pass":"login_pass",
+                "code":"login_code"
+            },
+            "data":{}
+        },
+        "logined": {
+            "fn": "logined",
+            "url": "/pallas/sys.do",
+            "p": {},
+            "data":{}
+        },
+        "logout": {
+            "fn": "logout",
+            "url": "/pallas/sys.do",
+            "p": {},
+            "data":{}
+        },
+        "getmenu": {
+            "fn": "getmenu",
+            "url": "/pallas/sys.do",
+            "p": {
+            },
+            "data":{}
+        },
+        "qryuser": {
+            "fn": "qryuser",
+            "url": "/pallas/sys.do",
+            "p": {
+                "uname":"qryuser_uname",
+                "utype":"qryuser_utype",
+                "state":"qryuser_state",
+                "page":"qryuser_page",
+                "pagesize":"qryuser_pagesize"
+            },
+            "data":{}
+        },
+        "newuser":{
+            "fn": "newuser",
+            "url": "/pallas/sys.do",
+            "p": {
+                "uname":"newuser_uname",
+                "password":"newuser_password",
+                "nick":"newuser_nick",
+                "email":"newuser_email",
+                "mobile":"newuser_mobile",
+                "utype":"newuser_utype"
+            },
+            "data":{}
+        },
+        "qryrole":{
+            "fn": "qryrole",
+            "url": "/pallas/sys.do",
+            "p": {},
+            "data":{}
+        },
+        "qryparam":{
+            "fn": "qryparam",
+            "url": "/pallas/sys.do",
+            "p": {
+                "pcode":"qryparam_pcode",
+                "ptype":"qryparam_ptype"
+            },
+            "data":{}
+        },
+        "qryvisit":{
+            "fn": "qryvisit",
+            "url": "/pallas/sys.do",
+            "p": {
+                "fromtime":"qryvisit_fromtime",
+                "endtime":"qryvisit_endtime",
+                "visitor":"qryvisit_visitor",
+                "page":"qryvisit_page",
+                "pagesize":"qryvisit_pagesize"
+            },
+            "data":{}
+        },
+        "qrylabel":{
+            "fn": "qrylabel",
+            "url": "/pallas/sys.do",
+            "p": {},
+            "data":{}
+        },
+        "qrytemplate":{
+            "fn": "qrytemplate",
+            "url": "/pallas/sys.do",
+            "p": {
+                "msgType":"qrytemplate_msgType",
+                "title":"qrytemplate_title"
+            },
+            "data":{}
+        },
+        "qrynotify":{
+            "fn": "qrynotify",
+            "url": "/pallas/sys.do",
+            "p": {
+                "fromtime":"qrynotify_fromtime",
+                "endtime":"qrynotify_endtime",
+                "receiver":"qrynotify_receiver",
+                "title":"qrynotify_title"
+            },
+            "data":{}
+        },
+        "typeparam":{
+            "fn": "typeparam",
+            "url": "/pallas/sys.do",
+            "p": {},
+            "data":{}
+        },
+        "qryconst":{
+            "fn": "qryconst",
+            "url": "/pallas/sys.do?fn=qryconst",
+            "p": {
+                "code":"qryconst_code",
+                "name":"qryconst_name"
+            },
+            "data":{}
+        }
+    }
+}
