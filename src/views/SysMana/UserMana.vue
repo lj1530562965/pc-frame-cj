@@ -1,10 +1,10 @@
 <template>
     <div>
         <form>
-            <div class="form-group"><Button style="width: 100px;" @on-click="showModal">新增账号</Button></div>
+            <div class="form-group"><Button type="info" @on-click="showModal">新增账号</Button></div>
             <div class="form-group"><Input :spanStyle="spanStyle" :text="'管理员账号:'"></Input></div>
-            <div class="form-group" style="margin-right: 10px;"><Button style="width: 100px;">搜索</Button></div>
-            <div class="form-group"> <Button style="width: 100px;">重置</Button></div>
+            <div class="form-group" style="margin-right: 10px;"><Button type="info">搜索</Button></div>
+            <div class="form-group"> <Button type="info">重置</Button></div>
         </form>
 
         <Table :itemList="$api.qryuser.data.data" :itemField="itemField"></Table>
@@ -23,7 +23,7 @@
 </template>
 <script>
     import Table from '@/views/components/Table.vue'
-    import Button from '@/views/components/Button.vue'
+
     import Input from '@/views/components/Input.vue'
     import Modal from '@/views/components/Modal'
     import Pagination from '@/views/components/Pagination'
@@ -71,6 +71,14 @@
         },
         created(){
             var self = this;
+//            self.$api.qryfield.p={
+//                "code":"S004"
+//            }
+//            self.$apiFn.initget(self.$api.qryfield,function(res){
+//                if(res.data.result==='success'){
+//                    self.$api.qryfield.data.data =res.data.data
+//                }
+//            })
             self.$api.qryuser.p={
                 "page":self.currentPage,
                 "pagesize":self.pageSize
@@ -86,7 +94,7 @@
         mounted(){
         },
         components: {
-            Table,Button,Input,Modal,Pagination
+            Table,Input,Modal,Pagination
         },
         methods:{
             picked(year, month, date) {

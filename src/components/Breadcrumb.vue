@@ -1,8 +1,8 @@
 <template>
-    <div class="breadcrumb">首页 > 概览</div>
+    <div class="cj-breadcrumb">首页 > 概览</div>
 </template>
 <style scoped>
-    .breadcrumb{
+    .cj-breadcrumb{
         text-align: left;
         color: #999;
         padding-left: 15px;

@@ -1,12 +1,16 @@
 <template>
     <div class="container">
         <h3 class="title">系统登录</h3>
+
         <Input  :text="'账号:'" :inputStyle="inputStyle1" :name="$api.login.p.uname" v-model="login_uname" @on-input="onInput"></Input>
         <Input  :text="'密码:'" :inputStyle="inputStyle1" :name="$api.login.p.pass" v-model="login_pass"></Input>
         <Input  :inputStyle="inputStyle2" :text="'验证码:'" :name="$api.login.p.code">
         <img src="http://localhost:8080/pallas/sys.do?fn=getcode&p=%7B%7D" width="70" height="35" @click="changeImg" />
         </Input>
-        <Button @on-click="$apiFn.get($api.login)">登录</Button>
+        <i-input v-model="login_uname" style="margin-top: 100px"></i-input>
+        <i-input v-model="login_pass"></i-input>
+        <i-input v-model="login_code"></i-input>
+        <Button @on-click="$get($api.login,{vm:self})">登录</Button>
     </div>
 </template>
 
@@ -20,6 +24,7 @@
             return {
                 login_uname:'admin',
                 login_pass:'111111',
+                login_code:'',
                 login:this.$api.login,
                 path:'',
                 inputStyle1:{
@@ -28,10 +33,12 @@
                 inputStyle2:{
                     width:'45%'
                 },
+                self:this
             }
         },
         created () {
             initSkin()
+            //this.$apiFn.gets(this.$api.login,{vm:this})
     },
         components: {
            Input,Button
@@ -51,6 +58,9 @@
             }
         },
         methods:{
+            aa(){
+                this.$get(this.$api.login,{vm:this})
+            },
             onInput:function(val){
                 console.log(val)
             },

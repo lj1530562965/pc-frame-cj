@@ -21,8 +21,8 @@
 <style scoped>
     .select-box{
         width: 100%;
-        height: 50px;
-        line-height: 50px;
+        height: 30px;
+        line-height: 30px;
     }
     .select-box span{
         font-size: 14px;
@@ -39,6 +39,5 @@
         transition: border 0.2s ease-in-out, background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         padding-left: 2px;
         float: left;
-        margin-top: 10px;
     }
 </style>

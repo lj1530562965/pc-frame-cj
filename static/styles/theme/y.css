@@ -1,17 +1,17 @@
 .iconfont{
     color: #f0ad4e;
 }
-.button-box button{
+.cj-button-box button{
     background-color: #f0ad4e;
     border: 1px solid #f0ad4e;
 }
 .navbar-toggler{
      color: #f0ad4e;
  }
-.input-box input:hover{
+.cj-input-box input:hover{
       border-color: #f0ad4e!important;
   }
-.input-box input:focus {
+.cj-input-box input:focus {
     border-color: #f0ad4e!important;
     box-shadow: 0 0 0 2px rgba(240, 173, 78, 0.2)!important;
 }

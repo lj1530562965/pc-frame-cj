@@ -49,10 +49,10 @@ export default () => {
         component: 'MesTpl'
     };
     map['字典管理'] = {
-        path:'/dashboard/dicmana',
-        name: 'DicMana',
+        path:'/dashboard/usermana',
+        name: 'UserMana',
         title: '字典管理',
-        component: 'DicMana'
+        component: 'UserMana'
     };
     return  function (val) { return map[val]; }
 }

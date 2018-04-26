@@ -1,5 +1,5 @@
 <template>
-    <div class="button-box">
+    <div class="cj-button-box">
         <button :name="name" @click="$emit('on-click')"><slot /></button>
     </div>
 </template>
@@ -10,13 +10,13 @@
     }
 </script>
 <style scoped>
-    .button-box{
+    .cj-button-box{
         width: 100%;
         margin: 0 auto;
         height: 50px;
         line-height: 50px;
     }
-    .button-box button{
+    .cj-button-box button{
         width: 100%;
         cursor: pointer;
         color: #fff;

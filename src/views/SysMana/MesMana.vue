@@ -3,14 +3,14 @@
         <form>
             <div class="form-group"><Input :spanStyle="spanStyle" :text="'接收账号:'"></Input></div>
             <div class="form-group" style="width: 38%;">
-                <label style="width: 8%;float: left;display: inline-block;margin-top: 15px;">日期:</label>
-                <Datepicker style="float: left;" v-on:picked="picked"></Datepicker>
-                <label style=" width: 3%;float: left;margin-top: 15px;">-</label>
-                <Datepicker v-on:picked="picked2"></Datepicker>
+                <label style="margin-top: 5px;">日期:</label>
+                <DatePicker type="date" placeholder="Select date" style="width: 200px"></DatePicker>
+                <label>-</label>
+                <DatePicker type="date" placeholder="Select date" style="width: 200px"></DatePicker>
             </div>
-            <div class="form-group" style="margin-right: 10px;"><Button style="width: 100px;">搜索</Button></div>
-            <div class="form-group"> <Button style="width: 100px;">重置</Button></div>
-            <div class="form-group"> <Button style="width: 100px;">删除已选</Button></div>
+            <div class="form-group" style="margin-right: 10px;"><Button type="info">搜索</Button></div>
+            <div class="form-group"> <Button type="info">重置</Button></div>
+            <div class="form-group"> <Button type="info">删除已选</Button></div>
         </form>
         <Table :itemList="itemList" :itemField="itemField"></Table>
         <div>
@@ -29,10 +29,8 @@
 </template>
 <script>
     import Table from '@/views/components/Table.vue'
-    import Button from '@/views/components/Button.vue'
     import Input from '@/views/components/Input.vue'
     import Modal from '@/views/components/Modal'
-    import Datepicker from '@/views/components/Datepicker'
     import Pagination from '@/views/components/Pagination'
     export default {
         name: 'mesmana',
@@ -55,28 +53,36 @@
                 itemList:[],
                 itemField:[{
                     title:"序号",
-                    field:"index"
+                    field:"index",
+                    width:5
                 },{
                     title:"标题",
-                    field:"title"
+                    field:"title",
+                    width:10
                 },{
                     title:"模板名称",
-                    field:"msgTypeName"
+                    field:"msgTypeName",
+                    width:10
                 },{
                     title:"收信人",
-                    field:"receiver"
+                    field:"receiver",
+                    width:10
                 },{
                     title:"内容",
-                    field:"content"
+                    field:"content",
+                    width:45
                 },{
                     title:"发送时间",
-                    field:"sendTime"
+                    field:"sendTime",
+                    width:10
                 },{
                     title:"状态",
-                    field:"stateName"
+                    field:"stateName",
+                    width:10
                 },{
                     title:"操作",
-                    field:["删除"]
+                    field:["删除"],
+                    width:10
                 }]
             }
         },
@@ -97,7 +103,7 @@
         mounted(){
         },
         components: {
-            Table,Button,Input,Modal,Datepicker,Pagination
+            Table,Input,Modal,Pagination
         },
         methods:{
             picked(year, month, date) {

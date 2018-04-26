@@ -1,13 +1,13 @@
 <template>
     <div>
         <form>
-        <div class="form-group"><Button style="width: 100px;" @on-click="showModal">新增模板</Button></div>
+        <div class="form-group"><Button type="info" @on-click="showModal">新增模板</Button></div>
         <div class="form-group"><Input :text="'标题:'"></Input></div>
             <div class="form-group">
                 <Select :title="'类型: '" :Selected="Selected" :name="$api.qrytemplate.p.msgType" :value="'constId'" :text="'constValue'"  :itemList="$api.qryconst.data.data" @on-change="$apiFn.get($api.qrytemplate)"></Select>
             </div>
-        <div class="form-group" style="margin-right: 10px;"><Button style="width: 100px;">搜索</Button></div>
-            <div class="form-group" style="margin-right: 10px;"><Button style="width: 100px;">重置</Button></div>
+        <div class="form-group" style="margin-right: 10px;"><Button type="info">搜索</Button></div>
+            <div class="form-group" style="margin-right: 10px;"><Button type="info">重置</Button></div>
         </form>
         <Table :itemList="$api.qrytemplate.data.data" :itemField="itemField"></Table>
         <div>
@@ -25,7 +25,6 @@
 </template>
 <script>
     import Table from '@/views/components/Table.vue'
-    import Button from '@/views/components/Button.vue'
     import Input from '@/views/components/Input.vue'
     import Modal from '@/views/components/Modal'
     import Select from '@/views/components/Select'
@@ -77,7 +76,7 @@
         mounted(){
         },
         components: {
-            Table,Button,Input,Modal,Select
+            Table,Input,Modal,Select
         },
         methods:{
             showModal(){

@@ -1,7 +1,7 @@
 <template>
     <div>
         <form>
-            <div class="form-group"><Button style="width: 100px;" @on-click="showModal">新增角色</Button></div>
+            <div class="form-group"><Button type="info" @on-click="showModal">新增角色</Button></div>
         </form>
         <Table :itemList="itemList" :itemField="itemField"></Table>
         <div>
@@ -19,7 +19,6 @@
 </template>
 <script>
     import Table from '@/views/components/Table.vue'
-    import Button from '@/views/components/Button.vue'
     import Input from '@/views/components/Input.vue'
     import Modal from '@/views/components/Modal'
     export default {
@@ -66,7 +65,7 @@
         mounted(){
         },
         components: {
-            Table,Button,Input,Modal
+            Table,Input,Modal
         },
         methods:{
             showModal(){

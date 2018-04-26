@@ -22,7 +22,6 @@
 </template>
 <script>
     import Table from '@/views/components/Table.vue'
-    import Button from '@/views/components/Button.vue'
     import Input from '@/views/components/Input.vue'
     import Modal from '@/views/components/Modal'
     export default {
@@ -66,7 +65,7 @@
         mounted(){
         },
         components: {
-            Table,Button,Input,Modal
+            Table,Input,Modal
         },
         methods:{
             showModal(){

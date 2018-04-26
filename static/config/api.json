@@ -121,6 +121,28 @@
                 "name":"qryconst_name"
             },
             "data":{}
+        },
+        "qryfield":{
+            "fn": "qryfield",
+            "url": "/pallas/sys.do?fn=qryfield",
+            "p": {
+                "code":"qryfield_code"
+            },
+            "data":{}
+        },
+        "typetable":{
+            "fn": "typetable",
+            "url": "/pallas/sys.do?fn=typetable",
+            "p": {},
+            "data":{}
+        },
+        "qrytable":{
+            "fn": "qrytable",
+            "url": "/pallas/sys.do?fn=qrytable",
+            "p": {
+                "ttype":"qrytable_ttype"
+            },
+            "data":{}
         }
     }
 }

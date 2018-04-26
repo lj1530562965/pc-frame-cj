@@ -12,7 +12,6 @@
 </template>
 <script>
     import Table from '@/views/components/Table.vue'
-    import Button from '@/views/components/Button.vue'
     import Select from '@/views/components/Select'
     export default {
         name: 'syspara',
@@ -55,7 +54,7 @@
 
         },
         components: {
-            Table,Button,Select
+            Table,Select
         },
         methods:{
 

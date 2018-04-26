@@ -23,6 +23,7 @@
             <!--当前第 <span class="text-primary" v-text="currentPage"></span> 页，-->
             共 <span class="text-primary" v-text="totalPage"></span> 页</small>
         <select class="form-control pagesize" v-model="myPageSize" @change="changePageSize">
+            <option>8</option>
             <option>10</option>
             <option>20</option>
             <option>30</option>

@@ -25,8 +25,8 @@
 <style scoped>
     .input-box{
         width: 100%;
-        height: 50px;
-        line-height: 50px;
+        height: 30px;
+        line-height: 30px;
         position: relative;
     }
     .input-box input{
@@ -38,12 +38,10 @@
         transition: border 0.2s ease-in-out, background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         padding-left: 5px;
         float: left;
-        margin-top: 10px;
         font-size: 14px;
     }
     .input-box span{
         text-align: right;
-        width: 18%;
         font-size: 14px;
         padding-right: 10px;
         display: inline-block;

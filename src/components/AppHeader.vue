@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="app-header">
+        <header class="cj-header">
             <button type="button" class="navbar-toggler" @click="sidebarToggle">☰</button>
             <div class="navbar-right">
                 <div class="iconfont icon-index"><span>主页</span></div>
@@ -76,7 +76,7 @@
     }
 </script>
 <style lang="scss" scoped="">
-.app-header{
+.cj-header{
     height: 45px;
     background: #ffffff;
     border-bottom: 2px solid #ddd;

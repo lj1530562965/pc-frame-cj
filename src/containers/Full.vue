@@ -1,7 +1,7 @@
 <template>
-  <div class="app">
+  <div class="cj-app">
       <Sidebar></Sidebar>
-      <div class="app-body">
+      <div class="cj-body">
           <main class="main">
               <AppHeader v-on:sidebarToggle="sidebarToggle">></AppHeader>
               <breadcrumb></breadcrumb>
@@ -85,12 +85,12 @@ export default {
 }
 </script>
 <style>
-    .app{
+    .cj-app{
         width: 100%;
         height: 100%;
         font-size: 14px;
     }
-    .app-body{
+    .cj-body{
         width: 85%;
         height: 100%;
         float: right;
@@ -107,7 +107,7 @@ export default {
         padding: 15px;
     }
     @media screen and (max-width: 768px) {
-        .app-body{
+        .cj-body{
             width: 100%;
         }
     }

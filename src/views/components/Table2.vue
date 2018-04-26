@@ -3,17 +3,24 @@
         <table>
             <thead>
                 <tr>
-                    <th v-for="field in itemField" v-bind:style="{width:field.width+'%'}">{{field.title}}</th>
+                    <th v-for="field in itemField" v-if="field.display===1" v-bind:style="{width: field.width + 'px'}">{{field.sname}}</th>
+                    <span v-if="btnList">操作</span>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(item,index) in itemList">
-                    <td v-for="field in itemField">
-                        <span v-if="field.field==='index'">{{index+1}}</span>
-                        <span v-else-if="field.title==='操作'" v-for="btnlist in field.field">
-                            <Button type="info" style="margin: 0 10px;">{{btnlist}}</Button>
+                    <td v-for="field in itemField" v-if="field.display===1">
+                        <!--<span v-if="field.name==='index'">{{index+1}}</span>-->
+                        <!--<span v-else-if="field.name==='操作'" v-for="btnlist in field.name">-->
+                            <!--<Button style="width: 100px;float: left;margin: 0 10px;">{{btnlist}}</Button>-->
+                        <!--</span>-->
+                        <!--<span v-else>{{decodeURIComponent(item[field.name])}}</span>-->
+                        <span>{{decodeURIComponent(item[field.name])}}</span>
+                    </td>
+                    <td v-if="btnList" v-for="btn in btnList">
+                        <span>
+                            <Button style="width: 100px;float: left;margin: 0 10px;">{{btn}}</Button>
                         </span>
-                        <span v-else>{{decodeURIComponent(item[field.field])}}</span>
                     </td>
                 </tr>
             </tbody>
@@ -22,13 +29,14 @@
 </template>
 
 <script>
+import Button from '@/views/components/Button.vue'
 export default {
   name: 'tables',
-  props: ['itemList','itemField'],
+  props: ['itemList','itemField','btnList'],
   mounted(){
   },
   components: {
-
+       Button
   }
 }
 </script>

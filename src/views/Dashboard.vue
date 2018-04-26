@@ -6,6 +6,8 @@
         <!--<Input  :text="'所属投资机构名称'" v-model="mechanismN"></Input>-->
         <!--<Radio name="method" value="phone" label="Phone" id="phone"></Radio>-->
         <!--<Radio name="method" value="email" label="Email" id="email"></Radio>-->
+<button class="btn btn-danger">dssdsd</button>
+
 
     </div>
 </template>
