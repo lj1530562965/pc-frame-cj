@@ -5,7 +5,12 @@
             <div class="navbar-right">
                 <div class="iconfont icon-index"><span>主页</span></div>
                 <div class="iconfont icon-password"> <span>修改密码</span></div>
-                <Select :selectStyle="selectStyle" class="iconfont icon-skin" :itemList="themeList" :Selected="Selected" style="width: 80px;float: left;font-size: 12px;margin-top: 3px;height: 20px;" :value="'name'" :text="'text'" @on-change="setTheme"></Select>
+                <div style="margin-top: 5px;">
+                    <span class="iconfont icon-skin"></span>
+                    <Select v-model="Selected" style="width:60px;margin-left: 1px;" @on-change="setTheme">
+                    <Option v-for="item in themeList" :value="item.name" :key="item.value">{{ item.text }}</Option>
+                    </Select>
+                </div>
                 <div class="iconfont icon-logout logout" @click="logout"><span>退出</span></div>
             </div>
         </header>
@@ -14,7 +19,6 @@
 </template>
 <script>
     import {initSkin,setTheme} from "../lib/skin.js"
-    import Select from '@/views/components/Select.vue'
     export default {
         props: ['showSidebar'],
         data () {
@@ -53,7 +57,7 @@
             this.Selected = this.$store.state.app.mainTheme;
     },
     components: {
-        Select
+
     },
     methods: {
     sidebarToggle (e) {

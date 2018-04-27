@@ -32,15 +32,15 @@ Vue.prototype.$apiFn = apiFn
 Vue.prototype.$api = api.api
 Vue.prototype.$get = function (config,{vm},callback, callbackerr) {
     var params = config.p;
-    var p = {};
-    console.log(params)
-    for(var key in params) {
-        if(params[key]){
-            p[key] = params[key];
-        }else{
-            p[key] = ''
-        }
-    }
+//    console.log(vm.$refs)
+//    console.log(name)
+//    vm.$refs[name].validate((valid) => {
+//        if (valid) {
+//            this.$Message.success('提交成功!');
+//        }else{
+//            this.$Message.error('表单验证失败!');
+//        }
+//    })
     axios.get(config.url,{
         params:{
             fn:config.fn,
@@ -53,6 +53,9 @@ Vue.prototype.$get = function (config,{vm},callback, callbackerr) {
             if(res.data.result === 'success'){
                 config.data = {};
                 config.data = res.data;
+//                for(var key in params){
+//                    params[key] = ''
+//                }
             }else{
                 alert(res.data.msg)
                 config.data = res.data;

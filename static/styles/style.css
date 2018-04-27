@@ -5,6 +5,9 @@
     padding: 15px 15px 0 15px;
     background: #f9f9f9;
 }
+.ivu-form-inline .ivu-form-item{
+    float: left;
+}
 .container-fluid form .form-group{
     float: left;
     margin-right: 20px;

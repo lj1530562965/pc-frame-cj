@@ -10,8 +10,7 @@
             },
             "ruleValidate": {
                 "uname": [
-                    { "required": true, "message": "账号不能为空", "trigger":"blur" },
-                    { "type": "email", "message": "账号格式不正确", "trigger": "blur" }
+                    { "required": true, "message": "账号不能为空", "trigger":"blur" }
                 ],
                 "pass": [
                     { "required": true, "message": "密码不能为空", "trigger":"blur" }
@@ -45,11 +44,11 @@
             "fn": "qryuser",
             "url": "/pallas/sys.do",
             "p": {
-                "uname":"qryuser_uname",
-                "utype":"qryuser_utype",
-                "state":"qryuser_state",
-                "page":"qryuser_page",
-                "pagesize":"qryuser_pagesize"
+                "uname":"",
+                "utype":"",
+                "state":"",
+                "page":1,
+                "pagesize":8
             },
             "data":{}
         },
@@ -57,12 +56,20 @@
             "fn": "newuser",
             "url": "/pallas/sys.do",
             "p": {
-                "uname":"newuser_uname",
-                "password":"newuser_password",
-                "nick":"newuser_nick",
-                "email":"newuser_email",
-                "mobile":"newuser_mobile",
-                "utype":"newuser_utype"
+                "uname":"",
+                "password":"",
+                "nick":"",
+                "email":"",
+                "mobile":"",
+                "utype":""
+            },
+            "ruleValidate": {
+                "uname": [
+                    { "required": true, "message": "账号不能为空", "trigger":"blur" }
+                ],
+                "password": [
+                    { "required": true, "message": "密码不能为空", "trigger":"blur" }
+                ]
             },
             "data":{}
         },
