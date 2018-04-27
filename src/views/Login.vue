@@ -1,11 +1,21 @@
 <template>
     <div class="container">
         <h3 class="title">系统登录</h3>
-        <label>账号:</label><i-input v-model="login_uname"></i-input>
-        <label>密码:</label><i-input v-model="login_pass"></i-input>
-        <label>验证码:</label><i-input v-model="login_code"></i-input>
-        <img src="http://localhost:8080/pallas/sys.do?fn=getcode&p=%7B%7D" width="70" height="35" @click="changeImg" />
-        <Button type="info" @click="$get($api.login,{vm:self})">登录</Button>
+        <i-form ref="form-validate" :model="$api.login.formValidate" :rules="$api.login.ruleValidate" :label-width="80">
+            <Form-item label="账号:" prop="login_uname">
+                <i-input v-model="$api.login.formValidate.login_uname" placeholder="请输入姓名"></i-input>
+            </Form-item>
+            <Form-item label="密码:" prop="login_pass">
+                <i-input v-model="$api.login.formValidate.login_pass" placeholder="请输入邮箱"></i-input>
+            </Form-item>
+            <Form-item label="验证码:" prop="login_code">
+                <i-input style="width: 155px;margin-top: -28px;" v-model="$api.login.formValidate.login_code" placeholder="请输入邮箱"></i-input>
+                <img src="http://localhost:8080/pallas/sys.do?fn=getcode&p=%7B%7D" width="70" height="35" @click="changeImg" />
+            </Form-item>
+            <Form-item>
+                <i-button style="width: 100%;margin-left: -58px;" type="primary" @click="$get($api.login,{vm:self})">登录</i-button>
+            </Form-item>
+        </i-form>
     </div>
 </template>
 
@@ -16,17 +26,8 @@
         name: 'buttons',
         data () {
             return {
-                login_uname:'admin',
-                login_pass:'111111',
-                login_code:'',
                 login:this.$api.login,
                 path:'',
-                inputStyle1:{
-                    width:'70%'
-                },
-                inputStyle2:{
-                    width:'45%'
-                },
                 self:this
             }
         },
@@ -52,6 +53,20 @@
             }
         },
         methods:{
+//            handleSubmit(name){
+//                console.log(this.$refs)
+//                console.log(name)
+//                this.$refs[name].validate((valid) => {
+//                    if (valid) {
+//                        this.$Message.success('提交成功!');
+//                    }else{
+//                        this.$Message.error('表单验证失败!');
+//                    }
+//            })
+//        },
+//        handleReset (name) {
+//            this.$refs[name].resetFields();
+//        },
             aa(){
                 this.$get(this.$api.login,{vm:this})
             },
