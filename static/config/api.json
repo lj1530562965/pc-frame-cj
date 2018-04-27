@@ -4,23 +4,19 @@
             "fn": "login",
             "url": "/pallas/sys.do",
             "p": {
-                "uname": "login_uname",
-                "pass":"login_pass",
-                "code":"login_code"
-            },
-            "formValidate": {
-                "login_uname":"",
-                "login_pass":"",
-                "login_code":""
+                "uname": "",
+                "pass":"",
+                "code":""
             },
             "ruleValidate": {
-                "login_uname": [
-                    { "required": true, "message": "姓名不能为空", "trigger":"blur" }
+                "uname": [
+                    { "required": true, "message": "账号不能为空", "trigger":"blur" },
+                    { "type": "email", "message": "账号格式不正确", "trigger": "blur" }
                 ],
-                "login_pass": [
+                "pass": [
                     { "required": true, "message": "密码不能为空", "trigger":"blur" }
                 ],
-                "login_code": [
+                "code": [
                     { "required": true, "message": "验证码不能为空", "trigger":"blur" }
                 ]
             },

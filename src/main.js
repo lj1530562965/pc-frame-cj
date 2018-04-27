@@ -33,12 +33,10 @@ Vue.prototype.$api = api.api
 Vue.prototype.$get = function (config,{vm},callback, callbackerr) {
     var params = config.p;
     var p = {};
-    console.log(vm)
+    console.log(params)
     for(var key in params) {
-        if(vm[params[key]]){
-            p[key] = vm[params[key]];
-        }else if(config.formValidate[params[key]]){
-            p[key] = config.formValidate[params[key]];
+        if(params[key]){
+            p[key] = params[key];
         }else{
             p[key] = ''
         }
@@ -46,7 +44,7 @@ Vue.prototype.$get = function (config,{vm},callback, callbackerr) {
     axios.get(config.url,{
         params:{
             fn:config.fn,
-            p:p
+            p:params
         }
     }).then(function (res){
         if(callback){

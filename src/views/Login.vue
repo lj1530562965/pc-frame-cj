@@ -1,15 +1,15 @@
 <template>
     <div class="container">
         <h3 class="title">系统登录</h3>
-        <i-form ref="form-validate" :model="$api.login.formValidate" :rules="$api.login.ruleValidate" :label-width="80">
-            <Form-item label="账号:" prop="login_uname">
-                <i-input v-model="$api.login.formValidate.login_uname" placeholder="请输入姓名"></i-input>
+        <i-form ref="form-validate" :model="$api.login.p" :rules="$api.login.ruleValidate" :label-width="80">
+            <Form-item label="账号:" prop="uname">
+                <i-input v-model="$api.login.p.uname" placeholder="请输入姓名"></i-input>
             </Form-item>
-            <Form-item label="密码:" prop="login_pass">
-                <i-input v-model="$api.login.formValidate.login_pass" placeholder="请输入邮箱"></i-input>
+            <Form-item label="密码:" prop="pass">
+                <i-input v-model="$api.login.p.pass" placeholder="请输入邮箱"></i-input>
             </Form-item>
-            <Form-item label="验证码:" prop="login_code">
-                <i-input style="width: 155px;margin-top: -28px;" v-model="$api.login.formValidate.login_code" placeholder="请输入邮箱"></i-input>
+            <Form-item label="验证码:" prop="code">
+                <i-input style="width: 155px;margin-top: -28px;" v-model="$api.login.p.code" placeholder="请输入邮箱"></i-input>
                 <img src="http://localhost:8080/pallas/sys.do?fn=getcode&p=%7B%7D" width="70" height="35" @click="changeImg" />
             </Form-item>
             <Form-item>
