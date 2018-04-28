@@ -53,8 +53,10 @@ Vue.prototype.$get = function (config,{vm},callback, callbackerr) {
             if(res.data.result === 'success'){
                 config.data = {};
                 config.data = res.data;
-//                for(var key in params){
-//                    params[key] = ''
+//                if(flag===true){
+//                   for(var key in params){
+//                        params[key] = ''
+//                    }
 //                }
             }else{
                 alert(res.data.msg)
@@ -84,59 +86,68 @@ const routes =  [
                 name: 'Dashboard',
                 title: '首页',
                 component: Dashboard
+            },
+            {
+                path: 'components',
+                name: 'Components',
+                title:'组件',
+                component: {
+                    render (c) { return c('router-view') }
+                },
+                children: [
+                {
+                    path: '/components/button',
+                    name: 'Button',
+                    title:'按钮',
+                    component: Button
+                },
+                {
+                    path: '/component/social-button',
+                    name: 'Social Button',
+                    title:'图标按钮',
+                    component: SocialButton
+                },
+                {
+                    path: '/components/card',
+                    name: 'Card',
+                    title:'卡片',
+                    component: Card
+                },
+                {
+                    path: '/components/form',
+                    name: 'Form',
+                    title:'表单',
+                    component: Form
+                },
+                {
+                    path: '/components/modal',
+                    name: 'Modal',
+                    title:'模态框',
+                    component: Modal
+                },
+                {
+                    path: '/components/switch',
+                    name: 'Switch',
+                    title:'开关按钮',
+                    component: Switch
+                },
+                {
+                    path: '/components/table',
+                    name: 'Table',
+                    title:'表格',
+                    component: Table
+                }
+            ]
+             },
+            {
+                path: '/plugins',
+                name: 'Plugins',
+                title: '第三方库',
+                component: {
+                render (c) { return c('router-view') }
+            },
+                children: []
             }
-//            {
-//                path: 'components',
-//                name: 'Components',
-//                title:'组件',
-//                component: {
-//                    render (c) { return c('router-view') }
-//                },
-//                children: [
-//                {
-//                    path: '/components/button',
-//                    name: 'Button',
-//                    title:'按钮',
-//                    component: Button
-//                },
-//                {
-//                    path: '/component/social-button',
-//                    name: 'Social Button',
-//                    title:'图标按钮',
-//                    component: SocialButton
-//                },
-//                {
-//                    path: '/components/card',
-//                    name: 'Card',
-//                    title:'卡片',
-//                    component: Card
-//                },
-//                {
-//                    path: '/components/form',
-//                    name: 'Form',
-//                    title:'表单',
-//                    component: Form
-//                },
-//                {
-//                    path: '/components/modal',
-//                    name: 'Modal',
-//                    title:'模态框',
-//                    component: Modal
-//                },
-//                {
-//                    path: '/components/switch',
-//                    name: 'Switch',
-//                    title:'开关按钮',
-//                    component: Switch
-//                },
-//                {
-//                    path: '/components/table',
-//                    name: 'Table',
-//                    title:'表格',
-//                    component: Table
-//                }
-//            ]
-//        }
         ]
     },
     {
