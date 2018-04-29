@@ -31,7 +31,8 @@
             "fn": "logout",
             "url": "/pallas/sys.do",
             "p": {},
-            "data":{}
+            "data":{},
+            "model":false
         },
         "getmenu": {
             "fn": "getmenu",
@@ -50,7 +51,8 @@
                 "page":1,
                 "pagesize":8
             },
-            "data":{}
+            "data":{},
+            "loading":true
         },
         "newuser":{
             "fn": "newuser",
@@ -61,7 +63,7 @@
                 "nick":"",
                 "email":"",
                 "mobile":"",
-                "utype":""
+                "utype":0
             },
             "ruleValidate": {
                 "uname": [
@@ -71,13 +73,43 @@
                     { "required": true, "message": "密码不能为空", "trigger":"blur" }
                 ]
             },
+            "data":{},
+            "model":false
+        },
+        "deluser":{
+            "fn": "deluser",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":""
+            },
+            "data":{},
+            "model":false
+        },
+        "setstate":{
+            "fn": "setstate",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":"",
+                "state":""
+            },
             "data":{}
+        },
+        "setrole":{
+            "fn": "setrole",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":"",
+                "roles":""
+            },
+            "data":{},
+            "model":false
         },
         "qryrole":{
             "fn": "qryrole",
             "url": "/pallas/sys.do",
             "p": {},
-            "data":{}
+            "data":{},
+            "loading":true
         },
         "qryparam":{
             "fn": "qryparam",
@@ -136,8 +168,8 @@
             "fn": "qryconst",
             "url": "/pallas/sys.do?fn=qryconst",
             "p": {
-                "code":"qryconst_code",
-                "name":"qryconst_name"
+                "code":"",
+                "name":""
             },
             "data":{}
         },

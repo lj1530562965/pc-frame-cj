@@ -1,5 +1,5 @@
 <template>
-    <div class="input-box">
+    <div class="cj-input-box">
         <span class="input-box-name" :style="spanStyle">{{text}}</span>
         <input type="text" ref="input" :value="value" :style="inputStyle" :name="name" @blur="blurFn" @input="$emit('on-input', $event.target.value)">
         <!--<span style="color: red;" v-if="showMsg">* 111</span>-->
@@ -23,13 +23,13 @@
     }
 </script>
 <style scoped>
-    .input-box{
+    .cj-input-box{
         width: 100%;
         height: 30px;
         line-height: 30px;
         position: relative;
     }
-    .input-box input{
+    .cj-input-box input{
         width: 50%;
         height: 30px;
         border: 1px solid #dddee1;
@@ -40,7 +40,7 @@
         float: left;
         font-size: 14px;
     }
-    .input-box span{
+    .cj-input-box span{
         text-align: right;
         font-size: 14px;
         padding-right: 10px;
@@ -48,12 +48,12 @@
         float: left;
         color: #1a1a1a;
     }
-    .input-box input:focus {
+    .cj-input-box input:focus {
         border-color: #57a3f3;
         outline: 0;
         box-shadow: 0 0 0 2px rgba(45, 140, 240, 0.2);
     }
-    .input-box input:hover {
+    .cj-input-box input:hover {
         border-color: #57a3f3;
     }
 </style>

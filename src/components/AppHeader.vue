@@ -11,9 +11,12 @@
                     <Option v-for="item in themeList" :value="item.name" :key="item.value">{{ item.text }}</Option>
                     </Select>
                 </div>
-                <div class="iconfont icon-logout logout" @click="logout"><span>退出</span></div>
+                <div class="iconfont icon-logout logout" @click="$api.logout.model=true"><span>退出</span></div>
             </div>
         </header>
+        <Modal v-model="$api.logout.model" width="280px" style="text-align: center;" :loading="loadingModel" :mask-closable="false" title="提示" @on-ok="logout" @on-cancel="$api.logout.model=false">
+        <p>您确定要退出?</p>
+        </Modal>
 
     </div>
 </template>
@@ -66,11 +69,9 @@
         this.$emit('sidebarToggle')
     },
     logout(e){
-         var self = this;
-         this.$apiFn.get(this.$api.logout,function(res){
-             if(res.data.result==='success'){
-                 self.$router.push({path: '/login'})
-             }
+         this.$del(this.$api.logout,'',(data) => {
+             this.$api.logout.model =  false;
+             this.$router.push({path: '/login'});
          })
     },
     setTheme (val){

@@ -15,4 +15,8 @@
 .iconfont{
     font-weight: 400;
     font-size: 14px;
+    cursor: pointer;
+}
+.ivu-btn.ivu-btn-loading{
+    pointer-events:visible!important;
 }

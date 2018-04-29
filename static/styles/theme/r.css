@@ -28,3 +28,7 @@
 .sidebar .nav div > .nav-dropdown.open {
     border-left: 4px solid #d9534f!important;
 }
+.ivu-btn-info{
+    background-color: #d9534f!important;
+    border-color: #d9534f!important;
+}
