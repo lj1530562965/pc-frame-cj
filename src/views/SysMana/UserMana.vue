@@ -24,7 +24,7 @@
                     <Input v-model="$api.newuser.p.uname" placeholder="请输入账号"></Input>
                 </FormItem>
                 <FormItem label="密   码:" prop="password">
-                    <Input v-model="$api.newuser.p.password" placeholder="请输入密码"></Input>
+                    <Input v-model="$api.newuser.p.password" type="password" placeholder="请输入密码"></Input>
                 </FormItem>
                 <FormItem label="昵   称:" prop="nick">
                     <Input v-model="$api.newuser.p.nick" placeholder="请输入昵称"></Input>
@@ -56,8 +56,6 @@
         name: 'usermana',
         data () {
             return {
-                self:this,
-                modal2:false,
                 qryuser:this.$api.qryuser,
                 columns: [
                     {

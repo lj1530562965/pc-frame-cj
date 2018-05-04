@@ -1,10 +1,10 @@
 <template>
     <div>
-        <li class="nav-item" v-if='!model.children' @click="activeClick">
-            <router-link :to="model.path" class="nav-link"><i class="icon-speedometer"></i> {{model.title}} </router-link>
+        <li class="nav-item" v-if='!model.children' v-show='model.title' @click="activeClick">
+            <router-link :to="model.path" class="nav-link"><i v-bind:class="model.icon"></i> {{model.title}} </router-link>
         </li>
-        <li class="nav-item nav-dropdown" v-if='model.children' @click="handleClick">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> {{model.title}}</a>
+        <li class="nav-item nav-dropdown" v-if='model.children' v-show='model.title' @click="handleClick">
+            <a class="nav-link nav-dropdown-toggle" href="#"><i v-bind:class="model.icon"></i> {{model.title}}</a>
             <ul class="nav-dropdown-items">
                 <tree-menu v-for="(item,key) in model.children" :key="key" :model="item"></tree-menu>
             </ul>
@@ -26,7 +26,11 @@ export default {
     },
     methods: {
         handleClick (e){
+            e.stopPropagation();
             e.preventDefault();
+//            for(var i= 0,len=dom.length;i<len;i++){
+//                dom[i].classList.remove("open");
+//            }
             e.target.parentElement.classList.toggle('open');
         },
         activeClick(e){
@@ -49,6 +53,10 @@ export default {
     }
     .icon.file-text {
         background-image: url(/src/assets/file-text.png);
+    }
+    .sidebar .iconfont{
+        color: #8aa4af;
+        margin-right: 10px;
     }
     .sidebar-nav ul{
         list-style: none;

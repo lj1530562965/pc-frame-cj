@@ -1,81 +1,80 @@
 <template>
     <div>
-        <!--<form>-->
-        <!--<div class="form-group"><Button style="width: 100px;" @on-click="showModal">新增账号</Button></div>-->
-        <!--<div class="form-group"><Input :text="'管理员账号:'"></Input></div>-->
-        <!--<div class="form-group" style="margin-right: 10px;"><Button style="width: 100px;">搜索</Button></div>-->
-        <!--<div class="form-group"> <Button style="width: 100px;">重置</Button></div>-->
-        <!--</form>-->
-        <Table :itemList="itemList" :itemField="itemField"></Table>
-        <div>
-        </div>
-        <Modal :modalData="modalData" @on-sure="sureFn">
-        <div class="form-group"><Input :text="'管理员账号:'" :inputStyle="inputStyle" ></Input></div>
-        <div class="form-group"><Input :text="'管理员账号:'" :inputStyle="inputStyle" ></Input></div>
-        <div class="form-group"><Input :text="'管理员账号:'" :inputStyle="inputStyle" ></Input></div>
-        <div class="form-group"><Input :text="'管理员账号:'" :inputStyle="inputStyle" ></Input></div>
-        <div class="form-group"><Input :text="'管理员账号:'" :inputStyle="inputStyle" ></Input></div>
-        <div class="form-group"><Input :text="'管理员账号:'" :inputStyle="inputStyle" ></Input></div>
-        <div class="form-group"><Input :text="'管理员账号:'" :inputStyle="inputStyle" ></Input></div>
+        <Table ref="table" border no-data-text="无记录" :loading="$api.qrylabel.loading" :columns="itemField" :data="$api.qrylabel.data.data"></Table>
+        <Modal v-model="$api.edtlabel.model" :loading="loadingModel" :mask-closable="false" title="设置参数" @on-ok="$add('$api.edtlabel',$api.qrylabel)" @on-cancel="$api.edtlabel.model=false">
+        <Form ref="$api.edtlabel.p" :model="$api.edtlabel.p" :rules="$api.edtlabel.ruleValidate" :label-width="80">
+            <FormItem label="标签名:" prop="tagname">
+                <Input v-model="tagname" disabled placeholder="请输入标签名"></Input>
+            </FormItem>
+            <FormItem label="标签:" prop="tag">
+                <Input v-model="$api.edtlabel.p.tag" placeholder="请输入标签"></Input>
+            </FormItem>
+            <FormItem label="标签说明:" prop="remark">
+                <Input v-model="$api.edtlabel.p.remark" placeholder="请输入标签说明"></Input>
+            </FormItem>
+        </Form>
         </Modal>
     </div>
 </template>
 <script>
-    import Table from '@/views/components/Table.vue'
-    import Input from '@/views/components/Input.vue'
-    import Modal from '@/views/components/Modal'
     export default {
         name: 'labelmana',
                 data () {
             return {
-                modalData:{
-                    isShow:false,
-                    title:'新增账号'
-                },
-                inputStyle:{
-                    width:'50%'
-                },
-                itemList: [
-                ],
-                itemField:[{
-                    title:"序号",
-                    field:"index"
-                },{
-                    title:"标签名",
-                    field:"name"
-                },{
-                    title:"标签",
-                    field:"tag"
-                },{
-                    title:"操作",
-                    field:["修改"]
-                }]
-            }
-        },
-        created(){
-            var self = this;
-            self.$apiFn.get(self.$api.qrylabel,function(res){
-                var data = res.data;
-                if(data.result==='success'){
-                    self.itemList = data.data;
-                    console.log(self.itemList)
-                }
-            })
-        },
-        mounted(){
-        },
-        components: {
-            Table,Input,Modal
-        },
-        methods:{
-            showModal(){
-                this.modalData.isShow = true;
-            },
-            sureFn(){
-                alert(1)
-                this.modalData.isShow = false;
-            }
+                tagname:"",
+                itemField:[
+                    {
+                        title:"序号",
+                        type: 'index',
+                        width: 100,
+                        align: 'center'
+                    },{
+                        title:"标签名",
+                        key:"name"
+                    },{
+                        title:"标签",
+                        key:"tag"
+                    },{
+                        title:"标签说明",
+                        key:"remark"
+                    },{
+                        title: '操作',
+                        key: 'action',
+                        width: 300,
+                        align: 'center',
+                        render: (h, params) => {
+                        return h('div', [
+                            h('Button', {
+                                props: {
+                                    type: 'info'
+                                },
+                                style: {
+                                    marginRight: '5px'
+                                },
+                                on: {
+                                    click: ()=>{
+                                    this.$api.edtlabel.p.id = params.row.id;
+            this.tagname = params.row.name;
+            this.$api.edtlabel.p.tag = params.row.tag;
+            this.$api.edtlabel.p.remark = params.row.remark;
+            this.$api.edtlabel.model = true;
         }
+    }
+    }, '修改')
+    ]);
+    }
+    }
+    ]
+    }
+    },
+    created(){
+        this.$qry(this.$api.qrylabel);
+    },
+    mounted(){
+
+    },
+    methods:{
+    }
     }
 </script>
 <style scoped="">

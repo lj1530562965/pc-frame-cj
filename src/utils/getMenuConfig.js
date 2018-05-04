@@ -1,49 +1,50 @@
 export default () => {
     var map = Object.create(null);
     map['系统管理'] = {
-        path: '/dashboard',
+        path: '/SysMana',
         name: 'SysMana',
         title: '系统管理',
+        icon:'iconfont icon-sysmana',
         component: {render (c) { return c('router-view') }}
     };
     map['用户管理'] = {
-        path:'/dashboard/usermana',
+        path:'/SysMana/usermana',
         name: 'UserMana',
         title: '用户管理',
         component: 'UserMana'
     };
     map['角色管理'] = {
-        path:'/dashboard/rolemana',
+        path:'/SysMana/rolemana',
         name: 'RoleMana',
         title: '角色管理',
         component: 'RoleMana'
     };
     map['系统参数'] = {
-        path:'/dashboard/syspara',
+        path:'/SysMana/syspara',
         name: 'SysPara',
         title: '系统参数',
         component: 'SysPara'
     };
     map['标签管理'] = {
-        path:'/dashboard/babelmana',
+        path:'/SysMana/babelmana',
         name: 'LabelMana',
         title: '标签管理',
         component: 'LabelMana'
     };
     map['日志管理'] = {
-        path:'/dashboard/logmana',
+        path:'/SysMana/logmana',
         name: 'LogMana',
         title: '日志管理',
         component: 'LogMana'
     };
     map['消息管理'] = {
-        path:'/dashboard/mesmana',
+        path:'/SysMana/mesmana',
         name: 'MesMana',
         title: '消息管理',
         component: 'MesMana'
     };
     map['消息模板'] = {
-        path:'/dashboard/mestpl',
+        path:'/SysMana/mestpl',
         name: 'MesTpl',
         title: '消息模板',
         component: 'MesTpl'

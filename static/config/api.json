@@ -4,8 +4,8 @@
             "fn": "login",
             "url": "/pallas/sys.do",
             "p": {
-                "uname": "",
-                "pass":"",
+                "uname": "admin",
+                "pass":"111111",
                 "code":""
             },
             "ruleValidate": {
@@ -111,54 +111,232 @@
             "data":{},
             "loading":true
         },
+        "newrole":{
+            "fn": "newrole",
+            "url": "/pallas/sys.do",
+            "p": {
+                "roleName":"",
+                "roleCName":"",
+                "remark":""
+            },
+            "ruleValidate": {
+                "roleName": [
+                    { "required": true, "message": "角色名不能为空", "trigger":"blur" }
+                ],
+                "roleCName": [
+                    { "required": true, "message": "角色中文名不能为空", "trigger":"blur" }
+                ]
+            },
+            "data":{},
+            "model":false
+        },
+        "delrole":{
+            "fn": "delrole",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":""
+            },
+            "data":{},
+            "model":false
+        },
+        "edtrole":{
+            "fn": "edtrole",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":"",
+                "roleCName":"",
+                "remark":""
+            },
+            "ruleValidate": {
+                "roleCName": [
+                    { "required": true, "message": "角色中文名不能为空", "trigger":"blur" }
+                ]
+            },
+            "data":{},
+            "model":false
+        },
         "qryparam":{
             "fn": "qryparam",
             "url": "/pallas/sys.do",
             "p": {
-                "pcode":"qryparam_pcode",
-                "ptype":"qryparam_ptype"
+                "pcode":"",
+                "ptype":""
+            },
+            "data":{},
+            "loading":true
+        },
+        "qryfunc":{
+            "fn": "qryfunc",
+            "url": "/pallas/sys.do",
+            "p": {
+            },
+            "data":{},
+            "loading":true
+        },
+        "dtlrole":{
+            "fn": "dtlrole",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":""
             },
             "data":{}
         },
-        "qryvisit":{
-            "fn": "qryvisit",
+        "authrole":{
+            "fn": "authrole",
             "url": "/pallas/sys.do",
             "p": {
-                "fromtime":"qryvisit_fromtime",
-                "endtime":"qryvisit_endtime",
-                "visitor":"qryvisit_visitor",
-                "page":"qryvisit_page",
-                "pagesize":"qryvisit_pagesize"
+                "id":"",
+                "funs":[]
             },
             "data":{}
+        },
+        "edtparam":{
+            "fn": "edtparam",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":"",
+                "pvalue":""
+            },
+            "ruleValidate": {
+                "pvalue": [
+                    { "required": true, "message": "参数值不能为空", "trigger":"blur" }
+                ]
+            },
+            "data":{},
+            "model":false
         },
         "qrylabel":{
             "fn": "qrylabel",
             "url": "/pallas/sys.do",
             "p": {},
-            "data":{}
+            "data":{},
+            "loading":true
+        },
+        "edtlabel":{
+            "fn": "edtlabel",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":"",
+                "tag":"",
+                "remark":""
+            },
+            "ruleValidate": {
+                "tag": [
+                    { "required": true, "message": "标签不能为空", "trigger":"blur" }
+                ]
+            },
+            "data":{},
+            "model":false
         },
         "qrytemplate":{
             "fn": "qrytemplate",
             "url": "/pallas/sys.do",
             "p": {
-                "msgType":"qrytemplate_msgType",
-                "title":"qrytemplate_title"
+                "msgType":"",
+                "title":""
             },
-            "data":{}
+            "data":{},
+            "loading":true
+        },
+        "newtemplate":{
+            "fn": "newtemplate",
+            "url": "/pallas/sys.do",
+            "p": {
+                "msgType":0,
+                "tempName":"",
+                "title":"",
+                "content":""
+            },
+            "ruleValidate": {
+                "tempName": [
+                    { "required": true, "message": "模板名称不能为空", "trigger":"blur" }
+                ],
+                "title": [
+                    { "required": true, "message": "模板标题不能为空", "trigger":"blur" }
+                ],
+                "content": [
+                    { "required": true, "message": "模板内容不能为空", "trigger":"blur" }
+                ]
+            },
+            "data":{},
+            "model":false
+        },
+        "deltemplate":{
+            "fn": "deltemplate",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":""
+            },
+            "data":{},
+            "model":false
+        },
+        "edttemplate":{
+            "fn": "edttemplate",
+            "url": "/pallas/sys.do",
+            "p": {
+                "id":"",
+                "msgType":"",
+                "tempName":"",
+                "title":"",
+                "content":""
+            },
+            "ruleValidate": {
+                "title": [
+                    { "required": true, "message": "模板标题不能为空", "trigger":"blur" }
+                ],
+                "content": [
+                    { "required": true, "message": "模板内容不能为空", "trigger":"blur" }
+                ]
+            },
+            "data":{},
+            "model":false
         },
         "qrynotify":{
             "fn": "qrynotify",
             "url": "/pallas/sys.do",
             "p": {
-                "fromtime":"qrynotify_fromtime",
-                "endtime":"qrynotify_endtime",
-                "receiver":"qrynotify_receiver",
-                "title":"qrynotify_title"
+                "fromtime":"",
+                "endtime":"",
+                "receiver":"",
+                "title":"",
+                "page":1,
+                "pagesize":8
             },
-            "data":{}
+            "data":{},
+            "loading":true
         },
-        "typeparam":{
+        "delnotify":{
+            "fn": "delnotify",
+            "url": "/pallas/sys.do",
+            "p": {
+                "ids":""
+            },
+            "data":{},
+            "model":false
+        },
+        "qryvisit":{
+            "fn": "qryvisit",
+            "url": "/pallas/sys.do",
+            "p": {
+                "fromtime":"",
+                "endtime":"",
+                "visitor":"",
+                "page":1,
+                "pagesize":8
+            },
+            "data":{},
+            "loading":true
+        },
+        "delvisit":{
+            "fn": "delvisit",
+            "url": "/pallas/sys.do",
+            "p": {
+                "ids":""
+            },
+            "data":{},
+            "model":false
+        },
+         "typeparam":{
             "fn": "typeparam",
             "url": "/pallas/sys.do",
             "p": {},

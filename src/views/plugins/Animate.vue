@@ -4,7 +4,7 @@
         <!--<Option v-for="item in items" :value="item" :key="item">{{ item }}</Option>-->
     <!--</Select>-->
     <div style="width: 50%;float: left;">
-        <Button size="small" v-for="item in items" v-model="items[0]" style="margin: 10px;width: 20%;" @click="change(item)">{{ item }}</Button>
+        <Button size="small" v-for="(item,index) in items" :key="index" v-model="items[0]" style="margin: 10px;width: 20%;" @click="change(item)">{{ item }}</Button>
     </div>
     <div style="width: 50%;float: right;">
         <transition :name="animateClass"

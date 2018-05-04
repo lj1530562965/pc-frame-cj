@@ -2,7 +2,7 @@
     <div class="sidebar">
         <div class="iconfont icon-person photo" style="color: #ffffff;font-size: 55px;"></div>
         <nav class="sidebar-nav" id="sidebar-nav">
-            <ul class="nav" v-for='menuItem in $router.options.routes[0].children'>
+            <ul class="nav" v-for='menuItem in data'>
                 <my-tree :model="menuItem"></my-tree>
             </ul>
         </nav>
@@ -15,13 +15,14 @@
         name: 'sidebar',
         data (){
             return {
-
+                data:[]
             }
         },
         components: {
             myTree
         },
         created(){
+            this.data = this.$router.options.routes[0].children
 //            console.log(this.$router.options.routes[0].children)
 //            console.log(this.$store.state.app.menuList)
         },

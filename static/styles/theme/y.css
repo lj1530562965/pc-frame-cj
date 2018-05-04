@@ -28,7 +28,13 @@
 .sidebar .nav div > .nav-dropdown.open {
     border-left: 4px solid #f0ad4e!important;
 }
-.ivu-btn-info{
+.ivu-btn-info,.ivu-page-item-active{
     background-color: #f0ad4e!important;
     border-color: #f0ad4e!important;
+}
+.ivu-input:focus,.ivu-input:hover,.ivu-select:focus .ivu-select-selection,.ivu-select-selection:hover{
+    border-color: #f0ad4e!important;
+}
+.ivu-select-item-selected, .ivu-select-item-selected:hover{
+    background-color: #f0ad4e!important;
 }

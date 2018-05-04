@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import apiFn from '@/lib/api.js'
+import axios from 'axios'
 import api from '../../../static/config/api.json'
 import MenuUtils from '@/utils/MenuUtils'
 import transData from '@/utils/transData'
@@ -23,39 +23,49 @@ const app = {
     },
     actions: {
         updateNameAction (context) {
-            apiFn.get(api.api.logined,function(res){
-                if(res.data.result==='success'){
-                    context.commit('updateUserName', res.data.data.uname)
+            var config = api.api.logined;
+            axios.get(config.url,{
+                params:{
+                    fn:config.fn
                 }
-            })
+            }).then((res) => {
+                if(res.data.result === 'success'){
+                context.commit('updateUserName', res.data.data.uname)
+                }
+            }).catch()
         },
         updateMenuList (context,callback) {
-            apiFn.get(api.api.getmenu,function(res){
-                var data = res.data.data;
-                var menulist = [];
-                var result = res.data.result;
-                if(result==='success'){
-                    for(var i= 0,len=data.length;i<len;i++){
-                        var menuConfig = getMenuConfig();
-                        var menu = menuConfig(data[i].title);
-                        for(var key in data[i]){
-                            menu[key] = data[i][key]
-                        }
-                        menulist.push(menu)
-                    }
-                    for(var i= 0,len=menulist.length;i<len;i++){
-                        var code = menulist[i].code;
-                        menulist[i].pcode = code.substring(0,code.length-1);
-                    }
+            var config = api.api.getmenu;
+            axios.get(config.url,{
+                params:{
+                    fn:config.fn
                 }
-                var menus = transData(menulist, 'code', 'pcode', 'children');
-                var items = []
-                MenuUtils(items,menus)
-                context.commit('getMenuList', items)
-                if(callback){
-                    callback(result,items)
+            }).then((res) => {
+        var data = res.data.data;
+        var menulist = [];
+        var result = res.data.result;
+        if(result==='success'){
+            for(var i= 0,len=data.length;i<len;i++){
+                var menuConfig = getMenuConfig();
+                var menu = menuConfig(data[i].title);
+                for(var key in data[i]){
+                    menu[key] = data[i][key]
                 }
-            })
+                menulist.push(menu)
+            }
+            for(var i= 0,len=menulist.length;i<len;i++){
+                var code = menulist[i].code;
+                menulist[i].pcode = code.substring(0,code.length-1);
+            }
+        }
+        var menus = transData(menulist, 'code', 'pcode', 'children');
+        var items = []
+        MenuUtils(items,menus)
+        context.commit('getMenuList', items)
+        if(callback){
+            callback(result,items)
+        }
+        }).catch()
         }
     }
 };
