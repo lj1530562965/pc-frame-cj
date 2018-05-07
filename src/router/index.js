@@ -3,14 +3,10 @@ import Full2 from '@/containers/Full2'
 import Dashboard from '@/views/Dashboard'
 import Login from '@/views/Login'
 // Views - Components
-import Button from '@/views/components/Button'
-import SocialButton from '@/views/components/SocialButton'
-import Card from '@/views/components/Card'
-import Form from '@/views/components/Form'
-import Modal from '@/views/components/Modal'
-import Switch from '@/views/components/Switch'
-import Table from '@/views/components/Table'
-import Input from '@/views/components/Input'
+import Scroll from '@/views/components/Scroll'
+import Upload from '@/views/components/Upload'
+import Transfer from '@/views/components/Transfer'
+import Rate from '@/views/components/Rate'
 
 // Views - plugins
 import Charts from '@/views/plugins/Charts'
@@ -49,46 +45,28 @@ const routes =  [
     },
     children: [
     {
-        path: '/components/button',
-        name: 'Button',
-        title:'按钮',
-        component: Button
+        path: '/components/scroll',
+        name: 'Scroll',
+        title:'scroll 无限滚动',
+        component: Scroll
     },
     {
-        path: '/component/social-button',
-        name: 'Social Button',
-        title:'图标按钮',
-        component: SocialButton
+        path: '/components/upload',
+        name: 'Upload',
+        title:'upload 上传',
+        component: Upload
     },
     {
-        path: '/components/card',
-        name: 'Card',
-        title:'卡片',
-        component: Card
+        path: '/components/transfer',
+        name: 'Transfer',
+        title:'transfer 穿梭框',
+        component: Transfer
     },
     {
-        path: '/components/form',
-        name: 'Form',
-        title:'表单',
-        component: Form
-    },
-    {
-        path: '/components/modal',
-        name: 'Modal',
-        title:'模态框',
-        component: Modal
-    },
-    {
-        path: '/components/switch',
-        name: 'Switch',
-        title:'开关按钮',
-        component: Switch
-    },
-    {
-        path: '/components/table',
-        name: 'Table',
-        title:'表格',
-        component: Table
+        path: '/components/rate',
+        name: 'Rate',
+        title:'rate 评分',
+        component: Rate
     }
 ]
 },

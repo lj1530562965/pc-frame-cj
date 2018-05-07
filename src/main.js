@@ -4,6 +4,14 @@ import Vue from 'vue'
 import routerFn from './router';
 import axios from 'axios'
 import _ from 'lodash'
+import VueAMap from 'vue-amap';
+Vue.use(VueAMap);
+VueAMap.initAMapApiLoader({
+    key: '1b034cdbddf77203ddfa7bf847f16b6a',
+    plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor'],
+    // 默认高德 sdk 版本为 1.4.4
+    v: '1.4.4'
+});
 
 
 import api from '../static/config/api.json'
@@ -13,6 +21,8 @@ import '../static/styles/style.css'
 
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+
+
 
 
 Vue.use(iView);
