@@ -72,22 +72,22 @@
         return new Promise(resolve => {
             setTimeout(() => {
                 if (dir > 0) {
-            const first = this.list3[0];
-            for (let i = 1; i < 11; i++) {
-                this.list3.unshift(first - i);
-            }
-        } else {
-            const last = this.list3[this.list3.length - 1];
-            for (let i = 1; i < 11; i++) {
-                this.list3.push(last + i);
-            }
-        }
-        resolve();
-    }, 2000);
+                    const first = this.list3[0];
+                    for (let i = 1; i < 11; i++) {
+                        this.list3.unshift(first - i);
+                    }
+                } else {
+                    const last = this.list3[this.list3.length - 1];
+                    for (let i = 1; i < 11; i++) {
+                        this.list3.push(last + i);
+                    }
+                }
+                resolve();
+            }, 2000);
     });
     }
-    }
-    }
+}
+}
 </script>
 <style scoped>
 .card{

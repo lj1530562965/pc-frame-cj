@@ -7,6 +7,10 @@ import Scroll from '@/views/components/Scroll'
 import Upload from '@/views/components/Upload'
 import Transfer from '@/views/components/Transfer'
 import Rate from '@/views/components/Rate'
+import Cascader from '@/views/components/Cascader'
+import Carousel from '@/views/components/Carousel'
+import Slider from '@/views/components/Slider'
+import Tree from '@/views/components/Tree'
 
 // Views - plugins
 import Charts from '@/views/plugins/Charts'
@@ -67,6 +71,30 @@ const routes =  [
         name: 'Rate',
         title:'rate 评分',
         component: Rate
+    },
+    {
+        path: '/components/cascader',
+        name: 'Cascader',
+        title:'cascader 级联选择',
+        component: Cascader
+    },
+    {
+        path: '/components/carousel',
+        name: 'Carousel',
+        title:'carousel 走马灯',
+        component: Carousel
+    },
+    {
+        path: '/components/slider',
+        name: 'Slider',
+        title:'slider 滑块',
+        component: Slider
+    },
+    {
+        path: '/components/tree',
+        name: 'Tree',
+        title:'tree 树形控件',
+        component: Tree
     }
 ]
 },
