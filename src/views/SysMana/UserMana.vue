@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Form :model="$api.qryuser" inline>
+        <Form class="form" :model="$api.qryuser" inline>
             <FormItem>
                 <Button type="info" @click="showAddModel">新增账号</Button>
             </FormItem>

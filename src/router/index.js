@@ -11,6 +11,15 @@ import Cascader from '@/views/components/Cascader'
 import Carousel from '@/views/components/Carousel'
 import Slider from '@/views/components/Slider'
 import Tree from '@/views/components/Tree'
+import Circle from '@/views/components/Circle'
+import Steps from '@/views/components/Steps'
+import Tabs from '@/views/components/Tabs'
+import Timeline from '@/views/components/Timeline'
+import Tag from '@/views/components/Tag'
+import Collapse from '@/views/components/Collapse'
+import Progress from '@/views/components/Progress'
+import ColorPicker from '@/views/components/ColorPicker'
+import AutoComplete from '@/views/components/AutoComplete'
 
 // Views - plugins
 import Charts from '@/views/plugins/Charts'
@@ -95,6 +104,60 @@ const routes =  [
         name: 'Tree',
         title:'tree 树形控件',
         component: Tree
+    },
+    {
+        path: '/components/circle',
+        name: 'Circle',
+        title:'circle 进度环',
+        component: Circle
+    },
+    {
+        path: '/components/steps',
+        name: 'Steps',
+        title:'steps 步骤条',
+        component: Steps
+    },
+    {
+        path: '/components/tabs',
+        name: 'Tabs',
+        title:'tabs 标签页',
+        component: Tabs
+    },
+    {
+        path: '/components/timeline',
+        name: 'Timeline',
+        title:'timeline 时间轴',
+        component: Timeline
+    },
+    {
+        path: '/components/tag',
+        name: 'Tag',
+        title:'tag 标签',
+        component: Tag
+    },
+    {
+        path: '/components/collapse',
+        name: 'Collapse',
+        title:'collapse 折叠面板',
+        component: Collapse
+    },
+    {
+        path: '/components/progress',
+        name: 'Progress',
+        title:'progress 进度条',
+        component: Progress
+    },
+    {
+        path: '/components/colorpicker',
+        name: 'ColorPicker',
+        title:'colorpicker 颜色选择器',
+        component: ColorPicker
+    },
+    {
+        path: '/components/autocomplete',
+        name: 'autocomplete',
+        title:'AutoComplete 自动完成',
+        component: AutoComplete
     }
 ]
 },
@@ -146,6 +209,9 @@ import VueRouter from 'vue-router'
 import App from '../App'
 import store from '../store';
 Vue.use(VueRouter)
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);
 var routerFn = function(callback){
     store.dispatch('updateMenuList',(result,items) =>{
         for(var i= 0,len=items.length;i<len;i++){
@@ -162,6 +228,13 @@ var routerFn = function(callback){
             template: '<App/>',
             components: { App }
         })
+    router.beforeEach((to, from, next) => {
+        iView.LoadingBar.start();
+    next();
+});
+router.afterEach(route => {
+    iView.LoadingBar.finish();
+});
         if(result==='failure'){
             router.push({path: '/login'})
         }

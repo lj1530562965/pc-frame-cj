@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Form :model="$api.qrynotify" inline>
+        <Form class="form" :model="$api.qrynotify" inline>
             <FormItem label="接收账号:">
                 <Input v-model="$api.qrynotify.p.receiver" style="display: table-cell;width: 200px;" placeholder="请输入账号"></Input>
             </FormItem>

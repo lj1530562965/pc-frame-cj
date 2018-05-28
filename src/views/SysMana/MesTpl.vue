@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Form :model="$api.qrytemplate" inline>
+        <Form class="form" :model="$api.qrytemplate" inline>
             <FormItem>
                 <Button type="info" @click="showAddModel">新增模板</Button>
             </FormItem>

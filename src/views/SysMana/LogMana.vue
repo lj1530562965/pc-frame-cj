@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Form :model="$api.qryvisit" inline>
+        <Form class="form" :model="$api.qryvisit" inline>
             <FormItem label="访问帐号:">
                 <Input v-model="$api.qryvisit.p.visitor" style="display: table-cell;width: 200px;" placeholder="请输入访问帐号"></Input>
             </FormItem>

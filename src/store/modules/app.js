@@ -48,10 +48,12 @@ const app = {
             for(var i= 0,len=data.length;i<len;i++){
                 var menuConfig = getMenuConfig();
                 var menu = menuConfig(data[i].title);
-                for(var key in data[i]){
-                    menu[key] = data[i][key]
+                if(menu){
+                    for(var key in data[i]){
+                        menu[key] = data[i][key]
+                    }
+                    menulist.push(menu)
                 }
-                menulist.push(menu)
             }
             for(var i= 0,len=menulist.length;i<len;i++){
                 var code = menulist[i].code;

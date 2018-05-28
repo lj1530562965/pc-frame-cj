@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Form :model="$api.qryrole" inline>
+        <Form class="form" :model="$api.qryrole" inline>
             <FormItem>
                 <Button type="info" @click="$api.newrole.model=true">新增角色</Button>
             </FormItem>

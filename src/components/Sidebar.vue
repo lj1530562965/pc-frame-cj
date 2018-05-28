@@ -1,6 +1,7 @@
 <template>
     <div class="sidebar">
-        <div class="iconfont icon-person photo" style="color: #ffffff;font-size: 55px;"></div>
+        <!--<div class="iconfont icon-person photo" style="color: #ffffff;font-size: 55px;"></div>-->
+        <Avatar shape="circle" size="large" class="avatar" src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
         <nav class="sidebar-nav" id="sidebar-nav">
             <ul class="nav" v-for='menuItem in data'>
                 <my-tree :model="menuItem"></my-tree>
@@ -42,9 +43,10 @@
         height: 100%;
         float: left;
         padding: 0;
-        overflow: hidden;
+        overflow: auto;
         color: #fff;
         background: #1a1a1a;
+        padding-bottom: 30px;
     }
     .photo{
         height: 80px;
@@ -56,6 +58,12 @@
         .sidebar {
             width: 0%;
         }
+    }
+    .avatar{
+        width: 70px;
+        height: 70px;
+        margin-top: 20px;
+        border-radius: 35px;
     }
 </style>
 

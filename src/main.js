@@ -19,17 +19,10 @@ import '../static/styles/animate/animate.css'
 import '../static/font/iconfont.css'
 import '../static/styles/style.css'
 
-import iView from 'iview';
-import 'iview/dist/styles/iview.css';
 
-
-
-
-Vue.use(iView);
 Vue.config.productionTip = false
 Vue.prototype.loadingModel = true
 Vue.prototype.$api = api.api
-
 routerFn();
 Vue.prototype.$add = function (config,qryconfig,callback, callbackerr) {
     var name = config+'.p';

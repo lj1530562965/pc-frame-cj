@@ -76,5 +76,6 @@
 <style scoped>
 .card{
     margin-bottom: 20px;
+    height: 200px;
 }
 </style>

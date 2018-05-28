@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Form :model="$api.qryparam" inline>
+        <Form class="form" :model="$api.qryparam" inline>
             <FormItem label="配置类型:" prop="ptype" style="display: inline-flex;">
                 <Select v-model="$api.qryparam.p.ptype" placeholder="请输入配置类型" @on-change="$qry($api.qryparam)">
                     <Option v-for="(option,index) in $api.typeparam.data.data" :value="option.ptype" :key="index">{{option.pname}}</Option>

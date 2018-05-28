@@ -330,5 +330,6 @@
 <style scoped>
 .card{
     margin-bottom: 20px;
+    min-height: 300px;
 }
 </style>
