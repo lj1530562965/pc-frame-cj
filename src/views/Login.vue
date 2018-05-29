@@ -11,7 +11,7 @@
                 </FormItem>
                 <FormItem label="验证码:" prop="code">
                     <Input style="width: 125px;display: inherit;" v-model="$api.login.p.code" placeholder="请输入验证码" @on-enter="login"></Input>
-                    <img src="http://localhost:8080/pallas/sys.do?fn=getcode&p=%7B%7D" width="70" height="35" @click="changeImg" />
+                    <img src="/pallas/sys.do?fn=getcode&p=%7B%7D" width="70" height="35" @click="changeImg" />
                 </FormItem>
                 <FormItem>
                     <Button style="width: 90%;float: left;" type="primary" @click="login">登录</Button>
